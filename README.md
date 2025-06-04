@@ -1,22 +1,22 @@
-# Manual Template Collection
+# マニュアルテンプレート集
 
-This repository hosts a static website containing downloadable templates and articles about how to create effective manuals.
+このリポジトリは、業務マニュアルのテンプレートと作成ノウハウをまとめた静的Webサイトです。`index.html` を開くとテンプレート一覧が表示され、必要なファイルをダウンロードできます。
 
-## Directory overview
-- `index.html` – landing page linking to all templates
-- `assets/` – shared CSS, JavaScript and images
-- `template/` – directories for each template with screenshots and `.zip` downloads
-- `howto/` – step‑by‑step guides and writing tips
-- `tags/` – tag pages listing templates by topic
+## ディレクトリ構成
+- `index.html` - サイトのトップページ
+- `assets/` - CSS・JavaScript・画像などの共通リソース
+- `template/` - 各テンプレートのフォルダ。スクリーンショットと `.zip` ファイルを含みます
+- `howto/` - マニュアル作成や運用方法を解説したページ
+- `tags/` - テンプレートをタグ別にまとめたHTMLページ
 
-## Usage
-Open `index.html` directly in a browser or run a small web server:
+## 使い方
+`index.html` を直接ブラウザで開くか、以下のように簡易サーバを起動してください。
 
 ```bash
 python3 -m http.server
 ```
 
-Then visit `http://localhost:8000`.
+起動後、ブラウザで `http://localhost:8000` にアクセスするとサイトを閲覧できます。
 
-## Contributing
-Add new templates under `template/` and update `index.html` and tag pages accordingly.
+## テンプレートの追加方法
+新しいテンプレートは `template/` 以下にフォルダを作成して追加します。追加後は `index.html` とタグページを更新してください。
