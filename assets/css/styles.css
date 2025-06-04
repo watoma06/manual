@@ -1,0 +1,1038 @@
+/*********************************************
+ * ベーススタイル（初期設定やリセットなど）
+ *********************************************/
+
+body {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", Meiryo, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #455267;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.background-color-blue {
+    background-color: #eef9ff;
+}
+
+/*********************************************
+ * レイアウト関連
+ *********************************************/
+
+/*=== ヘッダー & フッター ===*/
+header,
+footer {
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #6e6e6e;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 10px;
+    line-height: 1.2rem;
+}
+
+/*=== セクション（メインコンテンツ） ===*/
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/*=== ヘッダー内のコンテンツ配置 ===*/
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0 0 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header h1 {
+    text-align: left;
+    font-size: 3.5rem;
+    padding-right: 200px;
+}
+
+.header-box {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: 0px;
+    text-align: right;
+    padding-left: 20px;
+}
+
+.header a {
+    color: #fff;
+}
+
+/*********************************************
+ * タイポグラフィ（見出し・文字要素）
+ *********************************************/
+
+h1 {
+    margin: 40px 0;
+    font-size: 4rem;
+    line-height: 90px;
+}
+
+/* モバイルデバイス向けの調整 */
+@media screen and (max-width: 768px) {
+    body #content-howto h1,
+    #content-howto h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.4 !important;
+        margin: 30px 0 !important;
+    }
+}
+
+h2 {
+    color: #455267;
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px 0px 70px 0px;
+}
+
+h3 {
+    color: #455267;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0px;
+}
+
+p {
+    margin: 15px;
+}
+
+/*********************************************
+ * テーブル
+ *********************************************/
+
+/* 表のスタイル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* ヘッダー（見出し）のデザイン */
+thead tr {
+    background-color: #6e6e6e;
+    color: white;
+    font-weight: bold;
+}
+
+/* セルのデザイン */
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+/* データセルを左寄せ */
+table td {
+    text-align: left;
+}
+
+/* 奇数行の背景を薄いグレーに */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* テキストを右寄せにする */
+.total-checked {
+    text-align: right;
+}
+
+/* 数値を右寄せにする */
+.total-checked span#total {
+    float: right;
+}
+
+/*********************************************
+ * 各種コンポーネント
+ *********************************************/
+
+/*---------- テンプレート説明 ----------*/
+.description {
+    min-height: 165px;
+}
+
+/*---------- タグ一覧 ----------*/
+.tag-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: #e0f2f1;
+    border: 1px solid #80cbc4;
+    border-radius: 15px;
+    padding: 0px 10px;
+    font-size: 12px;
+    color: #00796b;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/*---------- モーダル ----------*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    border-radius: 12px;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* フェードインするアニメーション効果 */
+.fade-in {
+    animation: fade 0.8s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*===== モーダル内の2カラムレイアウト =====*/
+.template-section {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left-column {
+    width: 55%;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.right-column {
+    width: 45%;
+    padding-left: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.right-column h2 {
+    margin: 30px 0px 0px 0px;
+}
+
+/*===== モーダル内画像関連 =====*/
+.main-image img {
+    width: auto;
+    max-height: 350px;
+}
+
+/* ===== スライダーの配置調整 ===== */
+/* スライダーのコンテナ */
+.main-image {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    /*height: 400px;モーダル画像固定されていなかった原因*/
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Swiperのコンテナ */
+.main-image .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* 各スライド */
+.main-image .swiper-slide {
+    width: 100% !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+/* スライド内の画像 */
+.main-image .swiper-slide img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* キャプションを画像の右下に配置 */
+.swiper-slide .caption {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    text-align: right;
+}
+
+/* ナビゲーションボタンの位置調整 */
+.main-image .swiper-button-next,
+.main-image .swiper-button-prev {
+    color: #002a7fd3;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* ナビゲーションボタンの位置 */
+.main-image .swiper-button-prev {
+    left: 10px;
+}
+
+.main-image .swiper-button-next {
+    right: 10px;
+}
+
+/* ページインジケーターを画像の下に配置 */
+.swiper-pagination {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.my-pagination-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ページインジケーター（ドット）のデザイン */
+.main-image .swiper-pagination-bullet {
+    background: #000;
+    opacity: 0.8;
+}
+
+.main-image .swiper-pagination-bullet-active {
+    background: #007bff;
+}
+
+/*===== ファイル一覧 =====*/
+.file-list p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 20px 0px 5px 0px !important;
+}
+
+.file-list ul {
+    margin: 0px 0px 20px 0px;
+    font-size: 0.9rem;
+}
+
+.file-list ul li {
+    text-align: left;
+}
+
+/*===== ダウンロードボタン =====*/
+.download-button {
+    display: inline-block;
+    background: #002b7f url(../images/icons/dl.png) no-repeat calc(100% - 50px)
+        center/20px auto;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 0 0 15px 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.download-button:hover {
+    opacity: 0.8;
+}
+
+/*===== サイズ表記 =====*/
+.slide-size {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/*********************************************
+ * サムネイル一覧などのグリッド/横並び
+ *********************************************/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+    justify-content: flex-start;
+}
+
+.col.span-4 {
+    background-color: #fff;
+    text-align: center;
+    flex: 0 0 calc(33.333% - 20px);
+    box-sizing: border-box;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.col.span-4 p {
+    margin: 15px 0;
+    font-size: 0.9rem;
+}
+
+.col.span-2 {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.thumb {
+    height: 230px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    overflow: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: #ffffff;
+}
+
+.thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: 0;
+    border: 1px solid #b6b6b6a0;
+}
+
+.openModal:hover {
+    cursor: pointer;
+}
+
+/*********************************************
+ * サムネイル一覧専用グリッド
+ *********************************************/
+
+.thumbnail-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+
+.thumbnail-col {
+    background-color: #fff;
+    text-align: center;
+    flex: 0 0 23%;
+    box-sizing: border-box;
+    padding: 1.2em;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.thumbnail-col .thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 230px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.thumbnail-col .thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+}
+
+.thumbnail-col h3 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #455267;
+    text-align: center;
+}
+
+.thumbnail-col p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    text-align: center;
+}
+
+.thumbnail-col .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 0.5em;
+    padding: 0;
+    list-style: none;
+}
+
+.thumbnail-col .tag {
+    background-color: #e0f2f1;
+    border: 1px solid #80cbc4;
+    border-radius: 15px;
+    padding: 0px 10px;
+    font-size: 0.8rem;
+    color: #00796b;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/*********************************************
+ * howtoページ中身
+ *********************************************/
+
+#howto h3 {
+    background-color: #6e6e6e;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 0;
+    padding: 0 15px;
+}
+
+#content-howto nav {
+    margin-bottom: 50px;
+}
+
+#content-howto h1 {
+    margin: 40px 0;
+    font-size: 4rem;
+    line-height: 90px;
+}
+
+#content-howto h2 {
+    text-align: left;
+    color: #455267;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#content-howto h3 {
+    text-align: left;
+    color: #455267;
+    font-size: 1.3rem;
+    margin: 40px 30px 0 0;
+}
+
+#content-howto p {
+    margin: 15px;
+}
+
+#content-howto hr {
+    margin: 50px 0;
+}
+
+/* セクションのタイトル・記事タイトル */
+.section-title {
+    background-color: #6e6e6e;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: left;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.topic-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 !important;
+}
+
+/* ページの冒頭部分全体 */
+.intro-section {
+    margin-bottom: 60px;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+}
+
+.breadcrumb li:not(:last-of-type)::after {
+    content: "›";
+    margin: 0 0.6em;
+    color: #777;
+}
+
+/* コンテンツ下 */
+.bottom {
+    text-align: center;
+}
+
+/*********************************************
+ * FAQ アコーディオン
+ *********************************************/
+
+/* アコーディオンの基本スタイル */
+.accordion {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+    background: #f8f8f8;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-icon {
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* アコーディオンの開閉アニメーション */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background: #fff;
+    padding: 0 30px;
+}
+
+/* 開いたとき */
+.accordion-item.active .accordion-content {
+    max-height: 2500px;
+    padding: 30px;
+}
+
+/* 閉じるとき（上に戻るアニメーション） */
+.accordion-content.closing {
+    max-height: 0;
+    padding: 0 30px;
+    transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+
+#faq {
+    padding-bottom: 100px;
+}
+
+/*********************************************
+ * メディアクエリ（レスポンシブ対応）
+ *********************************************/
+
+/*=== スマホ・タブレット共通 (最大幅768px) ===*/
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        line-height: 25px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    #howto h3 {
+        font-size: 1rem;
+    }
+
+    header {
+        color: white;
+        padding: 20px 0px;
+        text-align: center;
+    }
+
+    /* スマホでのヘッダーレイアウト調整 */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 10px 0 10px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .header-box {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    /* モーダル内のレイアウト調整 */
+    .template-section {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    /* サムネイル一覧のレイアウト調整 */
+    .thumbnail-row {
+        justify-content: center;
+    }
+
+    .thumbnail-col {
+        flex: 0 0 95%;
+        margin: 10px 0;
+    }
+
+    .thumbnail-col .thumb {
+        height: 180px;
+    }
+
+    .col.span-2 {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        padding: 1em;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1200px;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .col.span-4 {
+        flex: 0 0 100%;
+        margin: 10px 0;
+    }
+
+    .main-image {
+        min-height: 300px;
+    }
+
+    .template-section {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-image .swiper-slide img {
+        max-height: 60vh;
+    }
+}
+
+/*=== iPad用 (768px以上 1025px以下) ===*/
+@media (min-width: 769px) and (max-width: 1025px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    /* ヘッダーレイアウト調整 */
+    .header {
+        padding: 1rem 15px 0 15px;
+    }
+
+    .header h1 {
+        font-size: 3rem;
+        padding-right: 100px;
+    }
+
+    .header-box {
+        padding-left: 15px;
+    }
+
+    /* モーダル内のレイアウト調整 */
+    .template-section {
+        padding: 15px;
+    }
+
+    .left-column,
+    .right-column {
+        padding: 15px;
+    }
+
+    /* サムネイル一覧のレイアウト調整 */
+    .thumbnail-row {
+        justify-content: space-around;
+    }
+
+    .thumbnail-col {
+        flex: 0 0 46%;
+        margin: 10px;
+    }
+
+    .col.span-4 {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+/*=== 印刷用 ===*/
+@media print {
+    body,
+    .main-visual,
+    .content,
+    .background-color-blue {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Swiperのスタイルを統一 */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    /*margin-bottom: 40px;一応削除*/
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+.swiper-slide img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: auto;
+}
+
+/* スライドキャプション */
+.swiper-slide .caption {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ナビゲーションボタンのスタイル改善 */
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #002a7f;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ページネーションの改善 */
+.swiper-pagination-container {
+    position: relative;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    background: #002a7f;
+    opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #002a7f;
+}
+
+/* ナビゲーションボタン */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #002a7fd3;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ページインジケーター */
+.swiper-pagination-container {
+    position: relative;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #000;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: #002a7f;
+    opacity: 1;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-slide .caption {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+}
