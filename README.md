@@ -20,3 +20,12 @@ python3 -m http.server
 
 ## テンプレートの追加方法
 新しいテンプレートは `template/` 以下にフォルダを作成して追加します。追加後は `index.html` とタグページを更新してください。
+
+## リンクチェック
+HTML ファイルのリンク切れは `scripts/check_links.sh` で検査できます。
+
+```bash
+bash scripts/check_links.sh
+```
+
+外部リンクには `curl` を使って HEAD リクエストを送り、404 が返った場合はエラーとなります。ローカルリンクは参照先ファイルの有無を確認します。
