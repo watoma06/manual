@@ -565,7 +565,8 @@ tbody tr:nth-child(odd) {
  * howtoページ中身
  *********************************************/
 
-#howto h3 {
+#howto h3,
+#howto-review h3 {
     background-color: #6e6e6e;
     border-radius: 10px;
     color: #fff;
@@ -724,7 +725,8 @@ tbody tr:nth-child(odd) {
         font-size: 2rem;
     }
 
-    #howto h3 {
+    #howto h3,
+    #howto-review h3 {
         font-size: 1rem;
     }
 
